@@ -2,6 +2,9 @@ import React from "react";
 import { Stage, Layer, Rect, Text } from 'react-konva';
 import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
+import * as Helper from '../apis/helper';
+
+let room = {};
 
 // Home page component
 class Map extends React.Component {
@@ -44,11 +47,13 @@ class Map extends React.Component {
       let state = this.state;
 
       if (state.selection.start){
-          console.log("END");
+        
+        this.splitArea(state.rooms, room.x, room.y, room.w, room.h, 90, 3 * this.state.tileSize);
+
         state.selection.start = null;
+        state.selection.end = null;
       }
       else {
-          console.log("START");
         state.selection = {};
 
         let mousePos = {
@@ -111,13 +116,90 @@ class Map extends React.Component {
         state.selection.w = w;
         state.selection.h = h;
 
+        state.selection.end = gridPos;
+
+        room = {x, y, w, h};
+
         this.setState(state);
     }
   }
     
   endSelect(e){
       let state = this.state;
+      
       state.selection.start = null;
+
+      this.setState(state);
+  }
+
+  splitArea(rooms, x, y, w, h, p, s){
+        console.log("SPLIT");
+        let sChance = Helper.getRandomInt(1, 100);
+
+        if (sChance > p){
+            rooms.push({x, y, w, h, color: Konva.Util.getRandomColor()});
+            return;
+        }
+
+        let hChance = Helper.getRandomInt(0, 1);
+
+        if (w > s && hChance == 0){
+            let hw = w/2;
+
+            let r = {
+                x,
+                y,
+                'w': hw,
+                h
+            }
+
+            let l = {
+                'x': x + hw,
+                y, 
+                'w': hw,
+                h
+            }
+
+            this.splitArea(rooms, r.x, r.y, r.w, r.h, p, s);
+            this.splitArea(rooms, l.x, l.y, l.w, l.h, p, s);
+            return;
+        }
+        else if (h > s){
+            let hh = h/2;
+
+            let u = {
+                x,
+                y,
+                w,
+                'h': hh
+            }
+
+            let d = {
+                x,
+                'y': y + hh, 
+                w,
+                'h': hh
+            }
+
+            this.splitArea(rooms, u.x, u.y, u.w, u.h, p, s);
+            this.splitArea(rooms, d.x, d.y, d.w, d.h, p, s);
+        }
+        else {
+            rooms.push({x, y, w, h, color: Konva.Util.getRandomColor()});
+            return;
+        }
+  }
+
+  createRoom(x, y, w, h){
+      let state = this.state;
+      
+      state.rooms.push({
+          x,
+          y, 
+          w,
+          h,
+          color: Konva.Util.getRandomColor()
+      });
 
       this.setState(state);
   }
@@ -127,8 +209,6 @@ class Map extends React.Component {
     let rooms = this.state.rooms.map((room, index)=>{
         return <Rect key={"room_" + index} x={room.x} y={room.y} width={room.w} height={room.h} fill={room.color} />
     });
-
-    console.log(rooms);
 
     let sel = this.state.selection;
     let selObj = (sel)?(<Rect key={"selection"} x={sel.x} y={sel.y} width={sel.w} height={sel.h} stroke={"red"} />):null;
