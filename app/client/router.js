@@ -15,8 +15,5 @@ const router = (
   </ConnectedRouter>
 );
 
-console.log("ROUTER AFTER");
-console.log(router);
-
 // export
 export { router };

@@ -1,5 +1,8 @@
-import mysagas from './mysaga';
+import globalsaga from './globalsaga';
+import toolsaga from './toolsaga';
+import mapsaga from './mapsaga';
+
 // main saga generators
 export function* sagas() {
-  yield [mysagas()];
+  yield [globalsaga(), mapsaga(), toolsaga()];
 }

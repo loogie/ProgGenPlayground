@@ -4,6 +4,7 @@ import { Stage, Layer, Rect, Text } from 'react-konva';
 import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
 import Map from "./Map";
+import Toolbar from "./Toolbar";
 
 // Home page component
 class Home extends React.Component {
@@ -17,6 +18,7 @@ class Home extends React.Component {
     return (
       <div className="page-home">
         <Map />
+        <Toolbar />
       </div>
     );
   }
