@@ -10,10 +10,24 @@ class Toolbar extends React.Component {
     render(){
         return (
             <div className="toolbar">
-                <button onClick={()=>this.beginAction("tetris")}>Tetris</button>
+                <div>{(this.props.tool.active)?this.props.tool.active:"None"}</div>
+                <button onClick={()=>this.beginAction("roomstart")}>Room</button>
+                <button onClick={()=>this.beginAction("split")}>Split</button>
             </div>
         );
     }
 }
 
-export default connect()(Toolbar);
+const mapStateToProps = (state)=>{
+    return {
+        tool: state.tool
+    }
+}
+
+const mapDispatchToProps = (dispatch)=>{
+    return {
+        dispatch
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Toolbar);

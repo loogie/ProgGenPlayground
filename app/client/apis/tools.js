@@ -7,117 +7,144 @@ export const MIN_ROOM_SIZE = 3;
 export function* performAction(action){
     let state = store.getState();
 
+    let pos = {x: action.action.event.evt.clientX, y: action.action.event.evt.clientY};
+
     switch (state.tool.active){
-        case "tetris":
-            let pos = {x: action.action.event.evt.clientX, y: action.action.event.evt.clientY};
-            tetrisRoom(getGridPos(pos));
+        case "roomstart":
+            let startPos = getGridPos(pos);
+            store.dispatch({type:"CHANGE_CURRENT_ACTION", actionName:"roomend", props:{startPos}});
+            break;
+        case "roomend":
+            let sp = state.tool.props.startPos;
+            let ep = getGridPos(pos);
+
+            let w = Math.abs(ep.x - sp.x);
+            let h = Math.abs(ep.y - sp.y);
+
+            if (sp.x, sp.y, w, h){
+                createRoom(sp.x, sp.y, w, h);
+            }
+
+            store.dispatch({type:"CLEAR_CURRENT_ACTION"});
+            break;
+        case "split":
+            pos = getGridPos(pos);
+
+            let room = getRoomAt(pos.x, pos.y);
+
+            if (room){
+                splitRoom(room);
+            }
+            else {
+                console.log("no room found");
+                throw Error("No room found");
+            }
+
+            store.dispatch({type:"CLEAR_CURRENT_ACTION"});
             break;
     }
 }
 
-function tetrisRoom(pos, size = 4){
-    console.log("TEST");
-    try{
-        let state = store.getState();
-        let rooms = [];
-        let start = CreateGridRoom(pos.x, pos.y, 1, 1, Konva.Util.getRandomColor());
+function mergeRooms(room1, room2){
+    let rm = {
 
-        rooms.push(start);
-        let room = start;
-
-        for (let i = 0; i < 3; i++){
-            let rand = Helper.getRandom(0, rooms.length);            
-            let roomPos = getGridPos({x:room.x, y:room.y});
-
-            console.log(roomPos);
-
-            let up = {x:roomPos.x, y: roomPos.y-1};
-            let right = {x:roomPos.x-1, y: roomPos.y};
-            let down = {x:roomPos.x, y: roomPos.y+1};
-            let left = {x:roomPos.x+1, y: roomPos.y};
-
-            let  valid = [0, 1, 2, 3];
-            for(let i = 0;i < state.map.rooms.length; i++){
-                let croom = getGridPos({x:state.map.rooms[i].x, y:state.map.rooms[i].y});
-
-                if (up.x == croom.x && up.y == croom.y){
-                    removeFromArray(valid, 0);
-                }
-
-                if (right.x == croom.x && right.y == croom.y){
-                    removeFromArray(valid, 1);
-                }
-
-                if (down.x == croom.x && down.y == croom.y){
-                    removeFromArray(valid, 2);
-                }
-
-                if (left.x == croom.x && left.y == croom.y){
-                    removeFromArray(valid, 3);
-                }
-            }
-
-            let random = Helper.getRandom(0, valid.length);
-            let dir = valid[random];
-
-            let newRoom = null;
-            switch(dir){
-                case 0:
-                    console.log("UP");
-                    newRoom =CreateGridRoom(up.x, up.y, 1, 1, Konva.Util.getRandomColor());
-                    break;
-                case 1:
-                    console.log("RIGHT");
-                    newRoom =CreateGridRoom(right.x, right.y, 1, 1, Konva.Util.getRandomColor());
-                    break;
-                case 2:
-                    console.log("DOWN");
-                    newRoom =CreateGridRoom(down.x, down.y, 1, 1, Konva.Util.getRandomColor());
-                    break;
-                case 3:
-                    console.log("RIGHT");
-                    newRoom =CreateGridRoom(left.x, left.y, 1, 1, Konva.Util.getRandomColor());
-                    break;
-            }
-
-            rooms.push(newRoom);
-            room = newRoom;
-        }
-    }
-    catch (err){
-        console.log("ERROR");
-        console.log(err);
     }
 }
 
-export function CreateGridRoom(x, y, w, h, c){
-    return CreateRoom(x * TILE_SIZE, y * TILE_SIZE, w * TILE_SIZE, h * TILE_SIZE, c);
+function splitRoom(room){
+    let horiz = (room.w == room.h)?Helper.getRandom(0, 2):((room.w > room.h)?0:1);
+
+    let rm1 = {
+        x: room.bounds.l,
+        y: room.bounds.t,
+        w: (horiz == 0)?(()Math.floor(room.w/2)):room.w,
+        h: (horiz == 1)?Math.floor(room.h/2):room.h
+    }
+
+    let rm2 = {
+        x: (horiz == 0)?(rm1.x + rm1.w): room.x,
+        y: (horiz == 1)?(rm1.y + rm1.h): room.y,
+        w: (horiz == 0)?(room.w - rm1.w):room.w,
+        h: (horiz == 1)?(room.h - rm1.h):room.h
+    }
+
+    store.dispatch({type:'MAP_REMOVE_ROOM', 'id': room.id});
+
+    createRoom(rm1.x, rm1.y, rm1.w, rm1.h);
+    createRoom(rm2.x, rm2.y, rm2.w, rm2.h);
 }
 
-export function CreateRoom(x, y, w, h, c){
-    let room = {x, y, w, h, c};
-    store.dispatch({type:"MAP_ADD_ROOM", room});
-    return room;
+function createRoom(x, y, w, h){
+    let cells = [];
+    let c = Konva.Util.getRandomColor();
+    let id = Helper.getRoomID();
+
+    let roomObj = {
+        id,
+        x, y, w, h,
+        bounds: getBounds(x, y, w, h),
+        c
+    }
+
+    store.dispatch({type:'MAP_ADD_ROOM', 'room':roomObj});
+
+    return roomObj;
 }
 
-function removeFromArray(array, item){
-    let index = -1;
-    for(let i = 0; i < array.length; i++){
-        let aitem = array[i];
-        if (aitem == item){
-            index = i;
-            break;
+function getBounds(x, y, w, h){
+    let bounds = {
+        t: y,
+        l: x,
+        r: x + (w - 1),
+        b: y + (h - 1),
+    }
+
+    return bounds;
+}
+
+function getRoomById(id){
+    let state = store.getState();
+
+    for(let i = 0; i < state.map.rooms.length; i++){
+        let rm = state.map.rooms[i];
+
+        if (rm.id == id){
+            return rm;
         }
     }
 
-    if (index != -1){
-        array.splice(index, 1);
-    }
+    return null;
 }
 
-function getGridPos(pos){
+function getRoomAt(x, y){
+    let state = store.getState();
+
+    for(let i = 0; i < state.map.rooms.length; i++){
+        let rm = state.map.rooms[i];
+
+        if (pointIntersects(x, y, rm.bounds)){
+            return rm;
+        }
+    }
+
+    return null;
+}
+
+function getGridPos(pos, x, y){
+    if (!pos){
+        pos = {x, y};
+    }
+
     return {
         x: (Math.floor(pos.x/TILE_SIZE)),
         y: (Math.floor(pos.y/TILE_SIZE))
     }
+}
+
+function pointIntersects(x, y, bounds){
+    if (x > bounds.l && x < bounds.r && y > bounds.t && y < bounds.b){
+        return true;
+    }
+    
+    return false;
 }

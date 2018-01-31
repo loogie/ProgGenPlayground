@@ -52,7 +52,8 @@ class Map extends React.Component {
   // render
   render() {
     let rooms = this.props.map.rooms.map((room, index)=>{
-        return <Rect key={"room_" + index} x={room.x} y={room.y} width={room.w} height={room.h} fill={room.c} />
+        let rb = Helper.buildRoom(room);
+        return <Rect key={room.id} x={rb.x} y={rb.y} width={rb.w} height={rb.h} fill={room.c} />
     });
 
     let sel = this.state.selection;

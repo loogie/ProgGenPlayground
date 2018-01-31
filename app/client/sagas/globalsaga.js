@@ -10,10 +10,8 @@ function* click(action){
     try{
         let state = store.getState();
 
-        switch(state.tool.active){
-            case "tetris":
-                yield put({type:"TOOL_ACTION", action});
-                break;
+        if (state.tool.active){
+            yield put({type:"TOOL_ACTION", action});
         }
     }
     catch(ex){
