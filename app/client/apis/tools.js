@@ -16,56 +16,77 @@ export function* performAction(action){
 }
 
 function tetrisRoom(pos, size = 4){
-    let firstRoom = CreateGridRoom(pos.x, pos.y, MIN_ROOM_SIZE, MIN_ROOM_SIZE, Konva.Util.getRandomColor());
-    console.log("FIRST");
-    firstRoom = Object.assign({}, firstRoom, {validDir:[0, 1, 3]});
-    console.log(firstRoom.validDir);
-    console.log("SECOND");
-    let current = [firstRoom];
-    
-    console.log("LETS DO THIS");
+    console.log("TEST");
+    try{
+        let state = store.getState();
+        let rooms = [];
+        let start = CreateGridRoom(pos.x, pos.y, 1, 1, Konva.Util.getRandomColor());
 
-    for(let i = 1; i < size; i++){
-        //get random room to start from
-        let startIndex = Helper.getRandom(0, current.length);
-        let startRoom = current[startIndex];
-        let gridPos = getGridPos({x:startRoom.x, y:startRoom.y});
-        
-        let random = Helper.getRandom(0, startRoom.validDir.length);
-        let dir = startRoom.validDir[random];
+        rooms.push(start);
+        let room = start;
 
-        let newPos = null;
+        for (let i = 0; i < 3; i++){
+            let rand = Helper.getRandom(0, rooms.length);            
+            let roomPos = getGridPos({x:room.x, y:room.y});
 
-        switch(dir){
-            case 0:
-                newPos = {
-                    x: gridPos.x,
-                    y: gridPos.y + MIN_ROOM_SIZE
+            console.log(roomPos);
+
+            let up = {x:roomPos.x, y: roomPos.y-1};
+            let right = {x:roomPos.x-1, y: roomPos.y};
+            let down = {x:roomPos.x, y: roomPos.y+1};
+            let left = {x:roomPos.x+1, y: roomPos.y};
+
+            let  valid = [0, 1, 2, 3];
+            for(let i = 0;i < state.map.rooms.length; i++){
+                let croom = getGridPos({x:state.map.rooms[i].x, y:state.map.rooms[i].y});
+
+                if (up.x == croom.x && up.y == croom.y){
+                    removeFromArray(valid, 0);
                 }
-                break;
-            case 1:
-                newPos = {
-                    x: gridPos.x + MIN_ROOM_SIZE,
-                    y: gridPos.y
+
+                if (right.x == croom.x && right.y == croom.y){
+                    removeFromArray(valid, 1);
                 }
-                break;
-            case 2:
-                newPos = {
-                    x: gridPos.x,
-                    y: gridPos.y-MIN_ROOM_SIZE
+
+                if (down.x == croom.x && down.y == croom.y){
+                    removeFromArray(valid, 2);
                 }
-                break;
-            case 3:
-                newPos = {
-                    x: gridPos.x - MIN_ROOM_SIZE,
-                    y: gridPos.y
+
+                if (left.x == croom.x && left.y == croom.y){
+                    removeFromArray(valid, 3);
                 }
-                break;
+            }
+
+            let random = Helper.getRandom(0, valid.length);
+            let dir = valid[random];
+
+            let newRoom = null;
+            switch(dir){
+                case 0:
+                    console.log("UP");
+                    newRoom =CreateGridRoom(up.x, up.y, 1, 1, Konva.Util.getRandomColor());
+                    break;
+                case 1:
+                    console.log("RIGHT");
+                    newRoom =CreateGridRoom(right.x, right.y, 1, 1, Konva.Util.getRandomColor());
+                    break;
+                case 2:
+                    console.log("DOWN");
+                    newRoom =CreateGridRoom(down.x, down.y, 1, 1, Konva.Util.getRandomColor());
+                    break;
+                case 3:
+                    console.log("RIGHT");
+                    newRoom =CreateGridRoom(left.x, left.y, 1, 1, Konva.Util.getRandomColor());
+                    break;
+            }
+
+            rooms.push(newRoom);
+            room = newRoom;
         }
-
-        let nroom = CreateGridRoom(newPos.x, newPos.y, MIN_ROOM_SIZE, MIN_ROOM_SIZE, Konva.Util.getRandomColor());
-        updateValidDir(current, nroom);
-        current.push(nroom);
+    }
+    catch (err){
+        console.log("ERROR");
+        console.log(err);
     }
 }
 
@@ -77,53 +98,6 @@ export function CreateRoom(x, y, w, h, c){
     let room = {x, y, w, h, c};
     store.dispatch({type:"MAP_ADD_ROOM", room});
     return room;
-}
-
-function updateValidDir(rooms, room){
-    console.log("UPDATE VALID DIR");
-    let roomCoord = getGridPos({x:room.x, y:room.y});
-
-    let upCoord = {x:roomCoord.x, y: roomCoord.y + MIN_ROOM_SIZE};
-    let rightCoord = {x:roomCoord.x + MIN_ROOM_SIZE, y: roomCoord.y};
-    let downCoord = {x:roomCoord.x, y: roomCoord.y - MIN_ROOM_SIZE};
-    let leftCoord = {x:roomCoord.x - MIN_ROOM_SIZE, y: roomCoord.y + MIN_ROOM_SIZE};
-    
-    let validDir = [0, 1, 2, 3];
-
-    for(let i = 0; i < rooms.length; i++){
-        let checkRoom = rooms[i];
-        let checkCoord = getGridPos({x:checkRoom.x, y:checkRoom.y});
-
-        if (checkCoord == upCoord){
-            let cvd = checkroom.validDir;
-            removeFromArray(cvd, 2);
-            checkRoom = Object.assign({}, checkroom, {"validDir": cvd})
-            removeFromArray(validDir, 0);
-        }
-        
-        if (checkCoord == rightCoord){
-            let cvd = checkroom.validDir;
-            removeFromArray(cvd, 3);
-            checkRoom = Object.assign({}, checkroom, {"validDir": cvd})
-            removeFromArray(validDir, 1);
-        }
-
-        if (checkCoord == downCoord){
-            let cvd = checkroom.validDir;
-            removeFromArray(cvd, 0);
-            checkRoom = Object.assign({}, checkroom, {"validDir": cvd})
-            removeFromArray(validDir, 2);
-        }
-        
-        if (checkCoord == leftCoord){
-            let cvd = checkroom.validDir;
-            removeFromArray(cvd, 1);
-            checkRoom = Object.assign({}, checkroom, {"validDir": cvd})
-            removeFromArray(validDir, 3);
-        }
-    }
-
-    room = Object.assign({}, room, {validDir});
 }
 
 function removeFromArray(array, item){
