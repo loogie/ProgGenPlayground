@@ -57,7 +57,7 @@ function splitRoom(room){
     let rm1 = {
         x: room.bounds.l,
         y: room.bounds.t,
-        w: (horiz == 0)?(()Math.floor(room.w/2)):room.w,
+        w: (horiz == 0)?Math.floor(room.w/2):room.w,
         h: (horiz == 1)?Math.floor(room.h/2):room.h
     }
 

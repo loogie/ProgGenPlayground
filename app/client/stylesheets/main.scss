@@ -21,3 +21,54 @@
 
     z-index: 100;
 }
+
+.menu {
+    display:flex;
+
+    flex-flow: column;
+}
+
+.story-hud{
+    position: absolute;
+
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+
+    display: flex;
+    
+    flex-flow: column;
+    
+    align-items: stretch;
+
+    .header {
+        flex: 25%;
+        background-color: #ff0;
+    }
+
+    .main {
+        flex: 70%;
+
+        display:flex;
+        flex-flow: row;
+
+        .left {
+            background-color: #2a702a;
+        }
+
+        .main{
+            flex:100%;
+            background-color: rgb(194, 30, 153);
+        }
+
+        .right {
+            background-color: rgb(25, 28, 192);
+        }
+    }
+
+    .footer {
+        flex: 5%;
+        background-color: #f00;
+    }
+}

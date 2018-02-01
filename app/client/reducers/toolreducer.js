@@ -8,4 +8,3 @@ export default function toolreducer(state={}, action){
         return state;
     }
 }
-  
