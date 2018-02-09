@@ -1,5 +1,6 @@
 import {store} from '../store';
 import * as Helper from './helper';
+import * as Buildings from "./buildings";
 
 export const TILE_SIZE = 16;
 export const MIN_ROOM_SIZE = 3;
@@ -7,16 +8,16 @@ export const MIN_ROOM_SIZE = 3;
 export function* performAction(action){
     let state = store.getState();
 
-    let pos = {x: action.action.event.evt.clientX, y: action.action.event.evt.clientY};
+    let pos;
 
     switch (state.tool.active){
         case "roomstart":
-            let startPos = getGridPos(pos);
+            let startPos = getGridPos({x: action.action.event.evt.clientX, y: action.action.event.evt.clientY});
             store.dispatch({type:"CHANGE_CURRENT_ACTION", actionName:"roomend", props:{startPos}});
             break;
         case "roomend":
             let sp = state.tool.props.startPos;
-            let ep = getGridPos(pos);
+            let ep = getGridPos({x: action.action.event.evt.clientX, y: action.action.event.evt.clientY});
 
             let w = Math.abs(ep.x - sp.x);
             let h = Math.abs(ep.y - sp.y);
@@ -28,7 +29,7 @@ export function* performAction(action){
             store.dispatch({type:"CLEAR_CURRENT_ACTION"});
             break;
         case "split":
-            pos = getGridPos(pos);
+            pos = getGridPos({x: action.action.event.evt.clientX, y: action.action.event.evt.clientY});
 
             let room = getRoomAt(pos.x, pos.y);
 
@@ -41,6 +42,22 @@ export function* performAction(action){
             }
 
             store.dispatch({type:"CLEAR_CURRENT_ACTION"});
+            break;
+        case "startBuilding":
+            pos = getGridPos({x: action.action.event.evt.clientX, y: action.action.event.evt.clientY});
+            Buildings.startBuilding(pos);
+            break;
+        case "randomRoom":
+            pos = getGridPos({x: action.action.event.evt.clientX, y: action.action.event.evt.clientY});
+            Buildings.createRandomBuilding(pos);
+            break;
+        case "drawBlock":
+            pos = getGridPos({x: action.action.event.evt.clientX, y: action.action.event.evt.clientY});
+            Buildings.drawBox(pos, state.tool.color);
+            break;
+        case "color":
+            let color = Konva.Util.getRandomColor();
+            store.dispatch({type: "CHANGE_COLOR", color});
             break;
     }
 }

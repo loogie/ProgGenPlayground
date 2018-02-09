@@ -1,6 +1,7 @@
 import {store} from '../../store';
 import * as Helper from '../helper';
 import tracery from 'tracery-grammar';
+import Traits from './traits';
 
 const relationships = {
     "marriage": {
@@ -8,7 +9,6 @@ const relationships = {
             {name: "man", type: "person", options:{sex:{value:"male", qualifier:"equals"}}},
             {name: "woman", type: "person", options:[
                 {field:"sex", qualifier:"equals", value:"female"},
-                
             ]}
         ]
     }
@@ -21,11 +21,6 @@ const names = tracery.createGrammar({
     "suffix": ["hand", "son", "hall", "bone", "water", "bow"],
     "first": ['#name#'],
     "last": ['Fletcher', 'Smith', '#prefix.capitalize##suffix#', '#prefix.capitalize##suffix#', '#prefix.capitalize##suffix#', '#prefix.capitalize##suffix#', '#prefix.capitalize##suffix#', '#prefix.capitalize##suffix#', '#prefix.capitalize.s##suffix#'],
-});
-
-const traits = tracery.createGrammar({
-    "appearance": ["wirey", "thin", "stout", "strong"],
-    "mind": ["clever", "brooding", "angry", "honorable", "kind"]
 });
 
 names.addModifiers(tracery.baseEngModifiers); 
@@ -49,7 +44,7 @@ export function createPerson(props){
         name,
         sex: (props.male)?"male":"female",
         traits: {
-            appearance: traits.flatten("#appearance#"),
+            appearance: Traits.getTrait(["player", "appearance"]),
             mind: traits.flatten("#mind#")
         }
     }

@@ -5,6 +5,7 @@ const source        = require('vinyl-source-stream');
 const browserify    = require('browserify');
 const minifyify     = require('minifyify');
 const babelify      = require('babelify');
+const exec          = require('child_process').exec;
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
@@ -14,6 +15,16 @@ let paths = {
     main_js  : [ 'app/client/index.js' ],
     js       : [ 'app/client/**/*.js*' ],
 };
+
+gulp.task('dbstart', ()=>{
+    //Rethinkdb connection
+    let command = 'rethinkdb --bind all -d ' + __dirname + "\\data";
+    console.log(command);
+    exec(command, function(err, stdout, stderr){
+        console.log(stdout);
+        console.log(stderr);
+    });
+});
 
 gulp.task('css', function() {
     return gulp .src(paths.main_css)

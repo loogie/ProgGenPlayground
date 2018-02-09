@@ -1,0 +1,180 @@
+2018-02-07T09:25:07.087904300 0.013660s notice: In recursion: removing file 'g:\\git\\projects\\playground\\data\\tmp'
+2018-02-07T09:25:07.088905000 0.014490s warn: Trying to delete non-existent file 'g:\\git\\projects\\playground\\data\\tmp'
+2018-02-07T09:25:07.090907900 0.016261s notice: Initializing directory g:\\git\\projects\\playground\\data
+2018-02-07T09:25:07.091927000 0.017845s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory 'g:\\git\\projects\\playground\\data' did not already exist or is empty.)
+2018-02-07T09:25:07.091927001 0.017926s notice: Running rethinkdb 2.3.5-windows (MSC 190023506)...
+2018-02-07T09:25:07.091927002 0.017974s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-02-07T09:25:07.091927003 0.018089s notice: Loading data from directory g:\\git\\projects\\playground\\data
+2018-02-07T09:25:07.542350100 0.468088s info: Automatically using cache size of 4522 MB
+2018-02-07T09:25:07.550045700 0.475465s notice: Listening for intracluster connections on port 29015
+2018-02-07T09:25:07.554021000 0.479686s notice: Listening for client driver connections on port 28015
+2018-02-07T09:25:07.554021001 0.480257s notice: Listening for administrative HTTP connections on port 8080
+2018-02-07T09:25:07.555020500 0.481154s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:25:07.556021800 0.482278s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:25:07.557022200 0.483113s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:25:07.557022201 0.483131s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
+2018-02-07T09:25:08.031049500 0.956969s notice: A newer version of the RethinkDB server is available: 2.3.6. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2018-02-07T09:27:26.727417500 139.655323s notice: Server got Control-C; shutting down...
+2018-02-07T09:29:12.421677600 0.024693s notice: Running rethinkdb 2.3.5-windows (MSC 190023506)...
+2018-02-07T09:29:12.421677601 0.024744s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-02-07T09:29:12.421677602 0.024756s notice: Loading data from directory g:\\git\\projects\\playground\\data
+2018-02-07T09:29:12.463700600 0.067192s info: Automatically using cache size of 4473 MB
+2018-02-07T09:29:12.466704500 0.069374s notice: Listening for intracluster connections on port 29015
+2018-02-07T09:29:12.467713400 0.070481s notice: Listening for client driver connections on port 28015
+2018-02-07T09:29:12.467713401 0.070646s notice: Listening for administrative HTTP connections on port 8080
+2018-02-07T09:29:12.467713402 0.070890s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:29:12.467713403 0.071218s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:29:12.468704400 0.071431s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:29:12.468704401 0.071435s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
+2018-02-07T09:29:12.706686000 0.310172s notice: A newer version of the RethinkDB server is available: 2.3.6. You can read the changelog at <https://github.com/rethinkdb/rethinkdb/releases>.
+2018-02-07T09:34:52.299758100 339.907396s notice: Server got Control-C; shutting down...
+2018-02-07T09:34:52.299758101 339.907583s notice: Shutting down client connections...
+2018-02-07T09:34:52.299758102 339.907703s notice: All client connections closed.
+2018-02-07T09:34:52.299758103 339.907707s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-02-07T09:34:52.300758800 339.908404s notice: Storage engine shut down.
+2018-02-07T09:35:08.169964600 0.025410s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-02-07T09:35:08.169964601 0.025507s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-02-07T09:35:08.169964602 0.025529s notice: Loading data from directory g:\\git\\projects\\playground\\data
+2018-02-07T09:35:08.219610700 0.075744s info: Automatically using cache size of 4304 MB
+2018-02-07T09:35:08.223791600 0.079507s notice: Listening for intracluster connections on port 29015
+2018-02-07T09:35:08.236581200 0.092699s notice: Listening for client driver connections on port 28015
+2018-02-07T09:35:08.237578300 0.093033s notice: Listening for administrative HTTP connections on port 8080
+2018-02-07T09:35:08.237578301 0.093438s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:35:08.238579300 0.093952s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:35:08.238579301 0.094387s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:35:08.238579302 0.094395s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
+2018-02-07T09:36:32.983836400 84.840437s notice: Server got Control-C; shutting down...
+2018-02-07T09:36:32.983836401 84.840786s notice: Shutting down client connections...
+2018-02-07T09:36:32.983836402 84.841078s notice: All client connections closed.
+2018-02-07T09:36:32.984840100 84.841092s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-02-07T09:36:32.985837800 84.842549s notice: Storage engine shut down.
+2018-02-07T09:38:36.929578000 0.007245s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-02-07T09:38:36.929578001 0.007301s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-02-07T09:38:36.929578002 0.007316s notice: Loading data from directory g:\\git\\projects\\playground\\data
+2018-02-07T09:38:36.969607400 0.047348s info: Automatically using cache size of 4265 MB
+2018-02-07T09:38:36.971608200 0.049320s notice: Listening for intracluster connections on port 29015
+2018-02-07T09:38:36.972608600 0.050775s notice: Listening for client driver connections on port 28015
+2018-02-07T09:38:36.972608601 0.051000s notice: Listening for administrative HTTP connections on port 8080
+2018-02-07T09:38:36.973614800 0.051329s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:38:36.973614801 0.051582s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:38:36.973614802 0.051785s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T09:38:36.973614803 0.051789s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
+2018-02-07T10:00:49.672849900 1332.767981s notice: Someone asked for the nonwhitelisted file "/nice%20ports%2C/Tri%6Eity.txt%2ebak".  If this should be accessible, add it to the static web assets.
+2018-02-07T10:26:02.555566500 2845.670030s notice: Server got Control-C; shutting down...
+2018-02-07T10:26:02.556569300 2845.670170s notice: Shutting down client connections...
+2018-02-07T10:26:02.556569301 2845.670262s notice: All client connections closed.
+2018-02-07T10:26:02.556569302 2845.670263s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2018-02-07T10:26:02.556569303 2845.670595s notice: Storage engine shut down.
+2018-02-07T10:26:38.122752900 0.007923s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-02-07T10:26:38.122752901 0.008031s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-02-07T10:26:38.122752902 0.008057s notice: Loading data from directory g:\\git\\projects\\playground\\data
+2018-02-07T10:26:38.156955100 0.042747s info: Automatically using cache size of 4124 MB
+2018-02-07T10:26:38.158955900 0.044966s notice: Listening for intracluster connections on port 29015
+2018-02-07T10:26:38.160960600 0.046201s notice: Listening for client driver connections on port 28015
+2018-02-07T10:26:38.160960601 0.046338s notice: Listening for administrative HTTP connections on port 8080
+2018-02-07T10:26:38.160960602 0.046559s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T10:26:38.160960603 0.046844s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T10:26:38.161958900 0.047044s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T10:26:38.161958901 0.047049s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
+2018-02-07T10:26:55.973458000 17.859111s info: Table 6ef99043-f8c9-4403-8253-62812745f6f9: Starting a new Raft election for term 1.
+2018-02-07T10:26:55.973458001 17.859606s info: Table 6ef99043-f8c9-4403-8253-62812745f6f9: Added replica on this server.
+2018-02-07T10:26:56.011485800 17.897342s info: Table 6ef99043-f8c9-4403-8253-62812745f6f9: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T10:51:20.183435900 1482.088132s notice: Someone asked for the nonwhitelisted file "/nice%20ports%2C/Tri%6Eity.txt%2ebak".  If this should be accessible, add it to the static web assets.
+2018-02-07T15:04:10.584241700 16652.681119s info: Table b11bff85-f665-48b5-8f4a-a7a879f6981a: Starting a new Raft election for term 1.
+2018-02-07T15:04:10.584241701 16652.681305s info: Table b11bff85-f665-48b5-8f4a-a7a879f6981a: Added replica on this server.
+2018-02-07T15:04:10.627855000 16652.724495s info: Table b11bff85-f665-48b5-8f4a-a7a879f6981a: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:30:51.774643500 18254.064182s notice: Removing file g:\\git\\projects\\playground\\data\\6ef99043-f8c9-4403-8253-62812745f6f9
+2018-02-07T15:30:51.774643501 18254.064191s info: Table 6ef99043-f8c9-4403-8253-62812745f6f9: Deleted the table.
+2018-02-07T15:30:51.826171900 18254.114938s notice: Removing file g:\\git\\projects\\playground\\data\\b11bff85-f665-48b5-8f4a-a7a879f6981a
+2018-02-07T15:30:51.826171901 18254.114944s info: Table b11bff85-f665-48b5-8f4a-a7a879f6981a: Deleted the table.
+2018-02-07T15:31:19.453019000 0.007545s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-02-07T15:31:19.453019001 0.007595s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-02-07T15:31:19.453019002 0.007606s notice: Loading data from directory g:\\git\\projects\\playground\\data
+2018-02-07T15:31:19.493039000 0.048035s info: Automatically using cache size of 3886 MB
+2018-02-07T15:31:19.495040900 0.050018s notice: Listening for intracluster connections on port 29015
+2018-02-07T15:31:19.497041300 0.051635s notice: Listening for client driver connections on port 28015
+2018-02-07T15:31:19.497041301 0.051839s notice: Listening for administrative HTTP connections on port 8080
+2018-02-07T15:31:19.497041302 0.052079s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T15:31:19.497041303 0.052293s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T15:31:19.498042400 0.052510s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-07T15:31:19.498042401 0.052514s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
+2018-02-07T15:31:26.676148400 7.232599s info: Table 4eb28631-0a22-4e7f-880f-aed797006f23: Starting a new Raft election for term 1.
+2018-02-07T15:31:26.676148401 7.232854s info: Table 4eb28631-0a22-4e7f-880f-aed797006f23: Added replica on this server.
+2018-02-07T15:31:26.730179700 7.286408s info: Table 4eb28631-0a22-4e7f-880f-aed797006f23: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:32:35.800774800 76.372079s notice: Removing file g:\\git\\projects\\playground\\data\\4eb28631-0a22-4e7f-880f-aed797006f23
+2018-02-07T15:32:35.800774801 76.372088s info: Table 4eb28631-0a22-4e7f-880f-aed797006f23: Deleted the table.
+2018-02-07T15:32:47.242307000 87.815676s info: Table 4772c374-2750-4b4c-828f-3a87a084e697: Starting a new Raft election for term 1.
+2018-02-07T15:32:47.242307001 87.815892s info: Table 4772c374-2750-4b4c-828f-3a87a084e697: Added replica on this server.
+2018-02-07T15:32:47.288342700 87.861537s info: Table 4772c374-2750-4b4c-828f-3a87a084e697: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:33:08.333464800 108.910923s notice: Removing file g:\\git\\projects\\playground\\data\\4772c374-2750-4b4c-828f-3a87a084e697
+2018-02-07T15:33:08.333464801 108.910929s info: Table 4772c374-2750-4b4c-828f-3a87a084e697: Deleted the table.
+2018-02-07T15:33:20.393975300 120.974677s info: Table d90c58b5-f5e9-40b1-b898-50dbf7680f93: Starting a new Raft election for term 1.
+2018-02-07T15:33:20.394965500 120.974904s info: Table d90c58b5-f5e9-40b1-b898-50dbf7680f93: Added replica on this server.
+2018-02-07T15:33:20.443991000 121.024533s info: Table d90c58b5-f5e9-40b1-b898-50dbf7680f93: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:35:38.445184000 259.052329s notice: Removing file g:\\git\\projects\\playground\\data\\d90c58b5-f5e9-40b1-b898-50dbf7680f93
+2018-02-07T15:35:38.445184001 259.052336s info: Table d90c58b5-f5e9-40b1-b898-50dbf7680f93: Deleted the table.
+2018-02-07T15:35:48.164310400 268.771957s info: Table 6aed033f-ceaf-4fb6-a6d9-a7ac23e8a332: Starting a new Raft election for term 1.
+2018-02-07T15:35:48.164310401 268.772170s info: Table 6aed033f-ceaf-4fb6-a6d9-a7ac23e8a332: Added replica on this server.
+2018-02-07T15:35:48.206336500 268.813595s info: Table 6aed033f-ceaf-4fb6-a6d9-a7ac23e8a332: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:36:11.562682200 292.171959s notice: Removing file g:\\git\\projects\\playground\\data\\6aed033f-ceaf-4fb6-a6d9-a7ac23e8a332
+2018-02-07T15:36:11.562682201 292.171965s info: Table 6aed033f-ceaf-4fb6-a6d9-a7ac23e8a332: Deleted the table.
+2018-02-07T15:36:17.088660800 297.698138s info: Table b8475167-1b5f-433c-8b9e-12ac710c6d02: Starting a new Raft election for term 1.
+2018-02-07T15:36:17.088660801 297.698778s info: Table b8475167-1b5f-433c-8b9e-12ac710c6d02: Added replica on this server.
+2018-02-07T15:36:17.141519000 297.751277s info: Table b8475167-1b5f-433c-8b9e-12ac710c6d02: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:36:25.787998700 306.399039s notice: Removing file g:\\git\\projects\\playground\\data\\b8475167-1b5f-433c-8b9e-12ac710c6d02
+2018-02-07T15:36:25.787998701 306.399046s info: Table b8475167-1b5f-433c-8b9e-12ac710c6d02: Deleted the table.
+2018-02-07T15:36:34.396169200 315.007194s info: Table c09220c0-3196-4aaf-baed-9c418ccfdc31: Starting a new Raft election for term 1.
+2018-02-07T15:36:34.396169201 315.007406s info: Table c09220c0-3196-4aaf-baed-9c418ccfdc31: Added replica on this server.
+2018-02-07T15:36:34.441197100 315.052038s info: Table c09220c0-3196-4aaf-baed-9c418ccfdc31: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:44:12.558643400 773.197186s notice: Removing file g:\\git\\projects\\playground\\data\\c09220c0-3196-4aaf-baed-9c418ccfdc31
+2018-02-07T15:44:12.558643401 773.197193s info: Table c09220c0-3196-4aaf-baed-9c418ccfdc31: Deleted the table.
+2018-02-07T15:44:23.105969900 783.744853s info: Table 29cfd8c3-0bab-4764-b1ce-835511d4b935: Starting a new Raft election for term 1.
+2018-02-07T15:44:23.105969901 783.745035s info: Table 29cfd8c3-0bab-4764-b1ce-835511d4b935: Added replica on this server.
+2018-02-07T15:44:23.150000100 783.789630s info: Table 29cfd8c3-0bab-4764-b1ce-835511d4b935: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:45:08.451424000 829.092557s notice: Removing file g:\\git\\projects\\playground\\data\\29cfd8c3-0bab-4764-b1ce-835511d4b935
+2018-02-07T15:45:08.451424001 829.092565s info: Table 29cfd8c3-0bab-4764-b1ce-835511d4b935: Deleted the table.
+2018-02-07T15:45:18.079061900 838.719961s info: Table 2bb32958-d587-4f6d-aa1d-eaa3d7efeaef: Starting a new Raft election for term 1.
+2018-02-07T15:45:18.079061901 838.720174s info: Table 2bb32958-d587-4f6d-aa1d-eaa3d7efeaef: Added replica on this server.
+2018-02-07T15:45:18.120091200 838.761688s info: Table 2bb32958-d587-4f6d-aa1d-eaa3d7efeaef: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:47:17.403477900 958.046510s notice: Removing file g:\\git\\projects\\playground\\data\\2bb32958-d587-4f6d-aa1d-eaa3d7efeaef
+2018-02-07T15:47:17.403477901 958.046517s info: Table 2bb32958-d587-4f6d-aa1d-eaa3d7efeaef: Deleted the table.
+2018-02-07T15:47:25.611745100 966.255062s info: Table 6a57fbac-8ca2-49a7-b4d4-545f0d2604f3: Starting a new Raft election for term 1.
+2018-02-07T15:47:25.611745101 966.255388s info: Table 6a57fbac-8ca2-49a7-b4d4-545f0d2604f3: Added replica on this server.
+2018-02-07T15:47:25.652774100 966.296794s info: Table 6a57fbac-8ca2-49a7-b4d4-545f0d2604f3: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:48:28.345829300 1028.991126s notice: Removing file g:\\git\\projects\\playground\\data\\6a57fbac-8ca2-49a7-b4d4-545f0d2604f3
+2018-02-07T15:48:28.345829301 1028.991132s info: Table 6a57fbac-8ca2-49a7-b4d4-545f0d2604f3: Deleted the table.
+2018-02-07T15:48:48.371800800 1049.016766s info: Table 891f4502-eb8e-4541-b38f-e3fcf518924c: Starting a new Raft election for term 1.
+2018-02-07T15:48:48.371800801 1049.016949s info: Table 891f4502-eb8e-4541-b38f-e3fcf518924c: Added replica on this server.
+2018-02-07T15:48:48.424838100 1049.069775s info: Table 891f4502-eb8e-4541-b38f-e3fcf518924c: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:51:02.261227500 1182.909482s notice: Removing file g:\\git\\projects\\playground\\data\\891f4502-eb8e-4541-b38f-e3fcf518924c
+2018-02-07T15:51:02.261227501 1182.909490s info: Table 891f4502-eb8e-4541-b38f-e3fcf518924c: Deleted the table.
+2018-02-07T15:51:12.807379500 1193.455333s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: Starting a new Raft election for term 1.
+2018-02-07T15:51:12.807379501 1193.455705s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: Added replica on this server.
+2018-02-07T15:51:12.860358800 1193.508128s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: This server is Raft leader for term 1. Latest log index is 0.
+2018-02-07T15:51:13.725916200 1194.374276s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: Configuration is changing.
+2018-02-08T11:35:35.384733400 0.007634s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-02-08T11:35:35.384733401 0.007700s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-02-08T11:35:35.384733402 0.007725s notice: Loading data from directory g:\\git\\projects\\playground\\data
+2018-02-08T11:35:35.442723200 0.066084s info: Automatically using cache size of 4232 MB
+2018-02-08T11:35:35.447726700 0.070951s notice: Listening for intracluster connections on port 29015
+2018-02-08T11:35:35.461737400 0.084760s notice: Listening for client driver connections on port 28015
+2018-02-08T11:35:35.461737401 0.084946s notice: Listening for administrative HTTP connections on port 8080
+2018-02-08T11:35:35.462736500 0.085467s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-08T11:35:35.462736501 0.085925s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-08T11:35:35.463736900 0.086330s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-08T11:35:35.463736901 0.086335s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
+2018-02-08T11:35:36.828355400 1.451062s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: Starting a new Raft election for term 2.
+2018-02-08T11:35:36.877444000 1.500898s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: This server is Raft leader for term 2. Latest log index is 4.
+2018-02-08T11:36:16.775292400 0.008568s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-02-08T11:36:16.776306400 0.008626s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-02-08T11:36:16.776306401 0.008638s notice: Loading data from directory g:\\git\\projects\\playground\\data
+2018-02-08T11:36:16.834734500 0.067909s info: Automatically using cache size of 4245 MB
+2018-02-08T11:36:16.841756300 0.074075s notice: Listening for intracluster connections on port 29015
+2018-02-08T11:36:16.868751000 0.101446s notice: Listening for client driver connections on port 28015
+2018-02-08T11:36:16.868751001 0.102078s notice: Listening for administrative HTTP connections on port 8080
+2018-02-08T11:36:16.870756900 0.103615s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-08T11:36:16.871777500 0.104341s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-08T11:36:16.872758600 0.105723s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-08T11:36:16.872758601 0.105738s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
+2018-02-08T11:36:18.767963000 2.000550s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: Starting a new Raft election for term 3.
+2018-02-08T11:36:18.811905600 2.044559s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: This server is Raft leader for term 3. Latest log index is 8.

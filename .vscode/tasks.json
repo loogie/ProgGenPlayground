@@ -9,6 +9,11 @@
             "problemMatcher": [
                 "$eslint-stylish"
             ]
+        },
+        {
+            "type": "gulp",
+            "task": "dbstart",
+            "problemMatcher": []
         }
     ]
 }

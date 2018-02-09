@@ -22,8 +22,11 @@
     "nunjucks": "^3.0.1",
     "react-konva": "^1.6.6",
     "request": "^2.83.0",
+    "rethinkdbdash": "^2.3.31",
     "serve-favicon": "^2.4.5",
+    "thinky": "^2.3.9",
     "tracery-grammar": "^2.7.3",
+    "uniqid": "^4.1.1",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
@@ -33,11 +36,13 @@
     "babel-preset-react": "^6.24.1",
     "babelify": "^8.0.0",
     "browserify": "^14.5.0",
+    "chai": "^4.1.2",
     "gulp-live-server": "0.0.31",
     "gulp-sass": "^3.1.0",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
     "minifyify": "^7.3.5",
+    "mocha": "^5.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
@@ -49,6 +54,7 @@
     "redux-form": "^7.2.0",
     "redux-freeze": "^0.1.5",
     "redux-saga": "^0.16.0",
+    "sinon": "^4.2.2",
     "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.9.0"
   }

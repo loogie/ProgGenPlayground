@@ -2,6 +2,8 @@ import uuidv1 from 'uuid/v1';
 
 const TILE_SIZE = 16;
 
+export const DIR = [0, 1, 2, 3];
+
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
  */
@@ -28,4 +30,28 @@ export function buildRoom(room){
         w: room.w * TILE_SIZE,
         h: room.h * TILE_SIZE
     }
+}
+
+export function checkArrayForItem(list, item){
+    for(let i = 0; i < list.length; i++){
+        let li = list[i];
+
+        if (li == item){
+            return true;
+        }
+    }
+
+    return false;
+}
+
+export function getPropArray(object){
+    let props = [];
+
+    for (let name in object){
+        if (object.hasOwnProperty(name)){
+            props.push(name);
+        }
+    }
+
+    return props;
 }
