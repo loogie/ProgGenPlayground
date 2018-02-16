@@ -1,3 +1,4 @@
+import Promise from 'bluebird';
 import uuidv1 from 'uuid/v1';
 
 const TILE_SIZE = 16;
@@ -32,26 +33,42 @@ export function buildRoom(room){
     }
 }
 
-export function checkArrayForItem(list, item){
-    for(let i = 0; i < list.length; i++){
-        let li = list[i];
-
-        if (li == item){
-            return true;
+export function findIndexOfItemInArray(array, idValue, idPropName){
+    if (idPropName == null){
+        for (let i = 0; i < array.length; i++){
+            let item = array[i];
+            if (item == idValue){
+                return i;
+            }
         }
     }
+    else {
+        for (let i = 0; i < array.length; i++){
+            let item = array[i];
+            if (item[idPropName] == idValue){
+                return i;
+            }
+        }
+    }    
 
-    return false;
+    return -1;
 }
 
-export function getPropArray(object){
-    let props = [];
-
-    for (let name in object){
-        if (object.hasOwnProperty(name)){
-            props.push(name);
-        }
+export function findItemInArray(array, idValue, idPropName){
+    if (idPropName == null){
+        array.forEach((item)=>{
+            if (item[idPropName] == idValue){
+                return item;
+            }
+        });
+    }
+    else {
+        array.forEach((item)=>{
+            if (item[idPropName] == idValue){
+                return item;
+            }
+        });
     }
 
-    return props;
+    return null;
 }

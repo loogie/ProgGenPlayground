@@ -1,136 +1,35 @@
 {
-    "people":[
-        {
-            "id": "frederick_vandergost",
-            "name": {
-                "first": "frederick",
-                "last": "vandergost"
-            },
-            "apprearance":{
-                "hair": "brown",
-                "eyes": "brown",
-                "body": ["thin", "strong"]
-            },
-            "mind": ["clever", "stubborn", "jealous"],
-            "relationships": [
-                {
-                    "id": 0,
-                    "params":{
-                        "type": "person",
-                        "personId": "helga_peterson"
-                    },
-                    "traits": ["love", "respect", "devotion"]
-                }
-            ]
-        },
-        {
-            "id": "helga_peterson",
-            "name": {
-                "first": "helga",
-                "last": ["vandergost","peterson"]
-            },
-            "apprearance":{
-                "hair": "blonde",
-                "eyes": "blue",
-                "body": ["short", "stout"]
-            },
-            "mind": ["clever", "jubilant", "analytical"],
-            "relationships": [
-                {
-                    "id": 0,
-                    "params":{
-                        "type": "person",
-                        "personId": "frederick_vandergost"
-                    },
-                    "traits": ["adoration", "love", "devotion"]
-                }
-            ]
-        }
-    ],
-    "events":[
-        {
-            "id": 0,
-            "event": {
-                "type": "meet",
-                "params": {
-                    "participants": ["frederick_vandergost", "helga_peterson"],
-                    "date": 50,
-                    "results":[
-                        {
-                            "type": "relationship",
-                            "target": "frederick_vandergost",
-                            "id": 0,
-                            "personId": "helga_peterson",
-                            "add": ["respect"],
-                            "remove": []
-                        },
-                        {
-                            "type": "relationship",
-                            "target": "helga_peterson",
-                            "id": 0,
-                            "personId": "frederick_vandergost",
-                            "add": ["adoration"],
-                            "remove": []
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            "id": 1,
-            "event": {
-                "type": "date",
-                "params": {
-                    "participants": ["frederick_vandergost", "helga_peterson"],
-                    "date": 75,
-                    "results":[
-                        {
-                            "type": "relationship",
-                            "target": "frederick_vandergost",
-                            "id": 0,
-                            "personId": "helga_peterson",
-                            "add": ["love"],
-                            "remove": []
-                        },
-                        {
-                            "type": "relationship",
-                            "target": "helga_peterson",
-                            "id": 0,
-                            "personId": "frederick_vandergost",
-                            "add": ["love"],
-                            "remove": []
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            "id": 2,
-            "event": {
-                "type": "wedding",
-                "params": {
-                    "participants": ["frederick_vandergost", "helga_peterson"],
-                    "date": 75,
-                    "results":[
-                        {
-                            "type": "relationship",
-                            "target": "frederick_vandergost",
-                            "id": 0,
-                            "personId": "helga_peterson",
-                            "add": ["devotion"],
-                            "remove": []
-                        },
-                        {
-                            "type": "relationship",
-                            "target": "helga_peterson",
-                            "id": 0,
-                            "personId": "frederick_vandergost",
-                            "add": ["devotion"],
-                            "remove": []
-                        }
-                    ]
-                }
-            }
-        }
-    ]
+    "dictionary": {
+        "descriptors": [
+            {"name":"baby",             "tags":["age"]},
+            {"name":"child",            "tags":["age"]},
+            {"name":"youngling",        "tags":["age"]},
+            {"name":"young-adult",      "tags":["age", "adult"]},
+            {"name":"adult",            "tags":["age", "adult"]},
+            {"name":"middle-aged",      "tags":["age", "adult"]},
+            {"name":"elder",            "tags":["age", "adult"]},
+            {"name":"blonde",           "tags":["hair"]},
+            {"name":"brunette",         "tags":["hair"]},
+            {"name":"raven",            "tags":["hair"]},
+            {"name":"ginger",           "tags":["hair"]},
+            {"name":"blue-eyed",        "tags":["eyes"]},
+            {"name":"green-eyed",       "tags":["eyes"]},
+            {"name":"brown-eyed",       "tags":["eyes"]},
+            {"name":"hazel-eyed",       "tags":["eyes"]},
+            {"name":"strong",           "tags":["physical", "fit", "strong"]},
+            {"name":"nimble",           "tags":["physical", "fit", "fast"]},
+            {"name":"wirey",            "tags":["physical"]},
+            {"name":"stout",            "tags":["physical"]},
+            {"name":"smart",            "tags":["mind", "intelligent"]},
+            {"name":"quick-witted",     "tags":["mind", "intelligent"]},
+            {"name":"smart",            "tags":["mind", "intelligent"]},
+            {"name":"ignorant",         "tags":["mind", "unintelligent"]},
+            {"name":"dense",            "tags":["mind", "unintelligent"]},
+            {"name":"caring",           "tags":["mind", "kind"]},
+            {"name":"hot-tempered",     "tags":["mind", "angry"]}
+        ],
+        "feelings": [
+
+        ]
+    }
 }

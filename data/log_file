@@ -178,3 +178,30 @@
 2018-02-08T11:36:16.872758601 0.105738s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
 2018-02-08T11:36:18.767963000 2.000550s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: Starting a new Raft election for term 3.
 2018-02-08T11:36:18.811905600 2.044559s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: This server is Raft leader for term 3. Latest log index is 8.
+2018-02-12T10:43:37.141997000 0.015300s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-02-12T10:43:37.141997001 0.015397s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-02-12T10:43:37.141997002 0.015424s notice: Loading data from directory g:\\git\\projects\\playground\\data
+2018-02-12T10:43:37.272758900 0.145930s info: Automatically using cache size of 3626 MB
+2018-02-12T10:43:37.276762900 0.150886s notice: Listening for intracluster connections on port 29015
+2018-02-12T10:43:37.297776400 0.171211s notice: Listening for client driver connections on port 28015
+2018-02-12T10:43:37.297776401 0.171515s notice: Listening for administrative HTTP connections on port 8080
+2018-02-12T10:43:37.298778600 0.171948s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-12T10:43:37.298778601 0.172375s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-12T10:43:37.298778602 0.172554s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-12T10:43:37.298778603 0.172560s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
+2018-02-12T10:43:39.190145900 2.063590s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: Starting a new Raft election for term 4.
+2018-02-12T10:43:39.266097800 2.139551s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: This server is Raft leader for term 4. Latest log index is 12.
+2018-02-12T10:51:23.084906700 465.964382s notice: Someone asked for the nonwhitelisted file "/nice%20ports%2C/Tri%6Eity.txt%2ebak".  If this should be accessible, add it to the static web assets.
+2018-02-16T12:00:12.282545300 0.007139s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2018-02-16T12:00:12.287891400 0.012028s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2018-02-16T12:00:12.287891401 0.012057s notice: Loading data from directory g:\\git\\projects\\playground\\data
+2018-02-16T12:00:12.331373400 0.056062s info: Automatically using cache size of 4286 MB
+2018-02-16T12:00:12.333375100 0.057791s notice: Listening for intracluster connections on port 29015
+2018-02-16T12:00:12.356280400 0.080373s notice: Listening for client driver connections on port 28015
+2018-02-16T12:00:12.356280401 0.080555s notice: Listening for administrative HTTP connections on port 8080
+2018-02-16T12:00:12.356280402 0.080940s notice: Listening on cluster addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-16T12:00:12.356280403 0.081293s notice: Listening on driver addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-16T12:00:12.357281400 0.081561s notice: Listening on http addresses: 127.0.0.1, 192.168.56.1, 10.100.10.76, fe80::6860:50b3:a9:a412%3, fe80::e1b7:2290:939e:d65c%5
+2018-02-16T12:00:12.357281401 0.081565s notice: Server ready, "GIS_SPEC_PC_ojn" 3a9a8a45-abf4-4a23-a499-89e70f7f1fed
+2018-02-16T12:00:13.709696900 1.433963s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: Starting a new Raft election for term 5.
+2018-02-16T12:00:13.753728000 1.478039s info: Table e56e40fd-fb3a-45b5-bb21-ba4fb7a9d50d: This server is Raft leader for term 5. Latest log index is 15.
