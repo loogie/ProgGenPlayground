@@ -216,6 +216,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Lib = undefined;
 exports.Init = Init;
+exports.GetRandomFeeling = GetRandomFeeling;
 exports.GetRandomDesc = GetRandomDesc;
 
 var _helper = require("../helper");
@@ -224,7 +225,13 @@ var Helper = _interopRequireWildcard(_helper);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var Lib = exports.Lib = {};
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var Lib = exports.Lib = {
+    descriptors: [],
+    feelings: [],
+    things: []
+};
 
 function Init() {
     fetch("/api/getStory", { method: "POST" }).then(function (response) {
@@ -238,9 +245,30 @@ function Init() {
         if (json.message) {
             reject(new Error(json.message));
         } else {
-            Lib.descriptors = json.descriptors;
-            Lib.feelings = json.feelings;
+            Lib.descriptors = addTo(Lib.descriptors, json.descriptors);
+            Lib.feelings = addTo(Lib.feelings, json.feelings);
+            Lib.things = addTo(Lib.things, json.things);
+
+            console.log(Lib);
         }
+    });
+}
+
+function addTo(list, newList) {
+    return [].concat(_toConsumableArray(list), _toConsumableArray(newList));
+}
+
+function GetRandomFeeling(tags, existing) {
+    var matches = Lib.feelings;
+    tags.forEach(function (searchtag) {
+        var newMatches = [];
+        matches.forEach(function (feeling) {
+            if (Helper.findIndexOfItemInArray(feeling.tags, searchtag) != -1) {
+                //tag found, keep in match list
+                newMatches.push(feeling);
+            }
+        });
+        matches = newMatches;
     });
 }
 

@@ -1,6 +1,10 @@
 import * as Helper from '../helper';
 
-export const Lib = {}
+export const Lib = {
+    descriptors: [],
+    feelings: [],
+    things: []
+}
 
 export function Init(){
     fetch("/api/getStory", {method: "POST"})
@@ -17,13 +21,32 @@ export function Init(){
           reject(new Error(json.message));
         }
         else {
-            Lib.descriptors = json.descriptors;
-            Lib.feelings = json.feelings;
+            Lib.descriptors = addTo(Lib.descriptors, json.descriptors);
+            Lib.feelings = addTo(Lib.feelings, json.feelings);
+            Lib.things = addTo(Lib.things, json.things);
+
+            console.log(Lib);
         }
       });
 }
 
+function addTo(list, newList){
+    return [...list, ...newList];
+}
 
+export function GetRandomFeeling(tags, existing){
+    let matches = Lib.feelings;
+    tags.forEach((searchtag)=>{
+        let newMatches = [];
+        matches.forEach((feeling)=>{
+            if (Helper.findIndexOfItemInArray(feeling.tags, searchtag) != -1){
+                //tag found, keep in match list
+                newMatches.push(feeling);
+            }
+        });
+        matches = newMatches;
+    });
+}
 
 export function GetRandomDesc(tags, existing){
     let matches = Lib.descriptors;

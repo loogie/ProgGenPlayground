@@ -1,30 +1,30 @@
 {
     "descriptors": [
-        {"name":"baby",             "tags":["age"]},
-        {"name":"child",            "tags":["age"]},
-        {"name":"youngling",        "tags":["age"]},
-        {"name":"young-adult",      "tags":["age", "adult"]},
-        {"name":"adult",            "tags":["age", "adult"]},
-        {"name":"middle-aged",      "tags":["age", "adult"]},
-        {"name":"elder",            "tags":["age", "adult"]},
-        {"name":"blonde",           "tags":["hair"]},
-        {"name":"brunette",         "tags":["hair"]},
-        {"name":"raven",            "tags":["hair"]},
-        {"name":"ginger",           "tags":["hair"]},
-        {"name":"blue-eyed",        "tags":["eyes"]},
-        {"name":"green-eyed",       "tags":["eyes"]},
-        {"name":"brown-eyed",       "tags":["eyes"]},
-        {"name":"hazel-eyed",       "tags":["eyes"]},
-        {"name":"strong",           "tags":["physical", "fit", "strong"]},
-        {"name":"nimble",           "tags":["physical", "fit", "fast"]},
-        {"name":"wirey",            "tags":["physical"], "opposing":["strong"]},
-        {"name":"stout",            "tags":["physical"]},
-        {"name":"smart",            "tags":["mental", "intelligent"], "opposing":["unintelligent"]},
-        {"name":"quick-witted",     "tags":["mental", "intelligent"], "opposing":["unintelligent"]},
-        {"name":"ignorant",         "tags":["mental", "unintelligent"]},
-        {"name":"dense",            "tags":["mental", "unintelligent"]},
-        {"name":"caring",           "tags":["mental", "kind"]},
-        {"name":"hot-tempered",     "tags":["mental", "angry"]}
+        {"name":"baby",             "tags":["person", "age"]},
+        {"name":"child",            "tags":["person", "age"]},
+        {"name":"youngling",        "tags":["person", "age"]},
+        {"name":"young-adult",      "tags":["person", "age", "adult"]},
+        {"name":"adult",            "tags":["person", "age", "adult"]},
+        {"name":"middle-aged",      "tags":["person", "age", "adult"]},
+        {"name":"elder",            "tags":["person", "age", "adult"]},
+        {"name":"blonde",           "tags":["person", "hair"]},
+        {"name":"brunette",         "tags":["person", "hair"]},
+        {"name":"raven",            "tags":["person", "hair"]},
+        {"name":"ginger",           "tags":["person", "hair"]},
+        {"name":"blue-eyed",        "tags":["person", "eyes"]},
+        {"name":"green-eyed",       "tags":["person", "eyes"]},
+        {"name":"brown-eyed",       "tags":["person", "eyes"]},
+        {"name":"hazel-eyed",       "tags":["person", "eyes"]},
+        {"name":"strong",           "tags":["person", "physical", "fit", "strong"]},
+        {"name":"nimble",           "tags":["person", "physical", "fit", "fast"]},
+        {"name":"wirey",            "tags":["person", "physical"], "opposing":["strong"]},
+        {"name":"stout",            "tags":["person", "physical"]},
+        {"name":"smart",            "tags":["person", "mental", "intelligent", "social"], "opposing":["unintelligent"]},
+        {"name":"quick-witted",     "tags":["person", "mental", "intelligent", "social"], "opposing":["unintelligent"]},
+        {"name":"ignorant",         "tags":["person", "mental", "unintelligent", "antisocial"]},
+        {"name":"dense",            "tags":["person", "mental", "unintelligent", "antisocial"]},
+        {"name":"caring",           "tags":["person", "mental", "kind", "social"]},
+        {"name":"hot-tempered",     "tags":["person", "mental", "angry", "antisocial"]}
     ],
     "feelings": [
         {"name":"pleasant", "toward":["person"], "tag":["positive"]},
@@ -42,8 +42,104 @@
         {"name":"obnoxious", "toward":["person", "place"], "tag":["negative"]},
         {"name":"dislike", "toward":["person", "place"], "tag":["negative"]},
         {"name":"horrid", "toward":["person", "place"], "tag":["detachment"]},
-        {"name":"despise", "toward":["person", "place"], "tag":["negative"]},
-        {"name":"abhor", "toward":["person", "place"], "tag":["negative"]},
-        {"name":"loath", "toward":["person", "place"], "tag":["negative"]}
+        {"name":"despise", "toward":["person", "place"], "tag":["detachment"]},
+        {"name":"abhor", "toward":["person", "place"], "tag":["detachment"]},
+        {"name":"loath", "toward":["person", "place"], "tag":["detachment"]}
+    ],
+    "events":[
+        {
+            "name": "meeting",
+            "type": "relationship",
+            "origins": "person",
+            "requirements": [
+                { "tags": ["person"], "isEqual":true }
+            ],
+            "results": [
+                {
+                    "actions": [
+                        {   "action":"add", "target":"origin", 
+                            "options":{
+                                "type":"feeling",
+                                "toward": "target",
+                                "tags":["positive", "negative"]
+                            }
+                        },
+                        {   "action":"add", "target":"target", 
+                            "options":{
+                                "type":"feeling",
+                                "toward": "origin",
+                                "tags":["positive", "negative"]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "things":[
+        {
+            "name": "nature",
+            "tags": ["area", "nature"]
+        },
+        {
+            "name": "wilderness",
+            "tags": ["area", "nature"]
+        },
+        {
+            "name": "pine tree",
+            "tags": ["thing", "plant", "evergreen", "lumber", "nature"]
+        },
+        {
+            "name": "dandilion",
+            "tags": ["thing", "plant", "flower", "nature"]
+        },
+        {
+            "name": "rose",
+            "tags": ["thing", "plant", "flower", "nature"]
+        },
+        {
+            "name": "daffodil",
+            "tags": ["thing", "plant", "flower", "nature"]
+        },
+        {
+            "name": "rabbit",
+            "tags": ["thing", "animal", "edible", "skinnable", "nature"]
+        },
+        {
+            "name": "cow",
+            "tags": ["thing", "animal", "edible", "skinnable", "nature"]
+        },
+        {
+            "name": "pig",
+            "tags": ["thing", "animal", "edible", "skinnable", "nature"]
+        },
+        {
+            "name": "horse",
+            "tags": ["thing", "animal", "edible", "skinnable", "worker", "nature"]
+        },
+        {
+            "name": "mule",
+            "tags": ["thing", "animal", "edible", "skinnable", "worker", "nature"]
+        },
+        {
+            "name": "jewels",
+            "tags": ["thing", "wealth"]
+        },
+        {
+            "name": "gold",
+            "tags": ["thing", "wealth"]
+        },
+        {
+            "name": "silver",
+            "tags": ["thing", "wealth"]
+        },
+        {
+            "name": "jewelery",
+            "tags": ["thing", "wearable", "wealth"]
+        },
+        {
+            "name": "silks",
+            "tags": ["thing", "wearable","wealth"]
+        }
     ]
 }
